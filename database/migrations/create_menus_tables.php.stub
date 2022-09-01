@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuTables extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -58,8 +58,8 @@ class CreateMenuTables extends Migration
      */
     public function down()
     {
-        Schema::drop($tableNames['menus']);
-        Schema::drop($tableNames['menu_subs']);
-        Schema::drop($tableNames['menu_user']);
+        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu_subs');
+        Schema::dropIfExists('menu_user');
     }
-}
+};

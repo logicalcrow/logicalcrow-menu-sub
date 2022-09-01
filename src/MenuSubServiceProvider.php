@@ -26,7 +26,6 @@ class MenuSubServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->offerPublishing();
-        //$this->registerModelBindings();
     }
 
     protected function offerPublishing()
