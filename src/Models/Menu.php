@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Logicalcrow\Menu\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Team;
@@ -10,11 +10,10 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'url',
+        'route',
         'ico',
-        'namespace',
-        'prefix',
-        'base_path',
         'order',
+        'role',
     ];
 
     protected $hidden = ['created_at', 'updated_at'];

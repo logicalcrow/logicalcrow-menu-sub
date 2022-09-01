@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace Logicalcrow\Menu\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Team;
 
 class MenuSub extends Model
 {
@@ -11,7 +10,9 @@ class MenuSub extends Model
         'menu_id',
         'name',
         'url',
+        'route',
         'order',
+        'role',
     ];
 
     protected $hidden = ['created_at', 'updated_at'];

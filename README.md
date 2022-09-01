@@ -1,5 +1,6 @@
 # **requirements in Laravel**
-This package can be used with Laravel 9.0 or higher.
+* This package can be used with Laravel 8.0 or higher.
+* jetstream team requirement
 
 ## **Installing**
 `composer require logicalcrow/menu-sub`
@@ -10,15 +11,22 @@ This package can be used with Laravel 9.0 or higher.
 ## **Add line to config/app.php**
 ```php
 'providers' => [
-    // add line at end of provider
-    App\Providers\MenuServiceProvider::class,
+    /*
+     * Package Service Providers...
+     */
+    Logicalcrow\Menu\Providers\MenuServiceProvider::class,
 ],
 ```
 
 ## **Add function Models/User.php**
 ```php
+use Logicalcrow\Menu\Models\Menu;
+```
+
+```php
 // add function at end of Models/User.php
 public function menus()
+{
     return $this->belongsToMany(Menu::class, 'menu_users')->orderByPivot('menu_id');
 }
 ```

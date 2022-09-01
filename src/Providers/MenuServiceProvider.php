@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Logicalcrow\Menu\Providers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;

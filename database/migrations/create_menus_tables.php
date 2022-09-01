@@ -17,13 +17,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 15);
-            $table->string('url', 50);
-            $table->string('ico', 50)->nullable();
-            $table->string('namespace', 100);
-            $table->string('prefix', 100);
-            $table->string('base_path', 100);
+            $table->string('url', 100);
+            $table->string('route', 100)->nullable();
+            $table->string('ico', 250)->nullable();
             $table->integer('order');
-            $table->string('role');
+            $table->string('role', 50);
 
             $table->timestamps();
         });
@@ -33,9 +31,10 @@ return new class extends Migration
             $table->foreignId('menu_id')->constrained('menus');
 
             $table->string('name', 15);
-            $table->string('url', 50);
+            $table->string('url', 100);
+            $table->string('route', 100)->nullable();
             $table->integer('order');
-            $table->string('role');
+            $table->string('role', 50);
 
             $table->timestamps();
         });
