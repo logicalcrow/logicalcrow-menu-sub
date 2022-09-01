@@ -32,6 +32,5 @@ class MenuServiceProvider extends ServiceProvider
                 View::share('menus', $menuUser);
             }
         });
-
     }
 }
