@@ -1,8 +1,8 @@
-# **Installation in Laravel**
+# **requirements in Laravel**
 This package can be used with Laravel 9.0 or higher.
 
 ## **Installing**
-`composer require spatie/laravel-permission`
+`composer require logicalcrow/menu-sub`
 
 ## **Publish**
 `php artisan vendor:publish --provider="Logicalcrow\Menu\MenuSubServiceProvider"`
