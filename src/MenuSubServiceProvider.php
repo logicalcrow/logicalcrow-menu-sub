@@ -2,7 +2,7 @@
 
 namespace Logicalcrow\Menu;
 
-use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +25,7 @@ class MenuSubServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //$this->offerPublishing();
+        $this->offerPublishing();
     }
 
     protected function offerPublishing()
