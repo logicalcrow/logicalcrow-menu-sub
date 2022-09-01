@@ -13,18 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menu_subs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('menu_id')->constrained('menus');
 
             $table->string('name', 15);
             $table->string('url', 100);
             $table->string('route', 100)->nullable();
-            $table->string('ico', 250)->nullable();
             $table->integer('order');
             $table->string('role', 50);
 
             $table->timestamps();
         });
+
     }
 
     /**
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu_subs');
     }
 };

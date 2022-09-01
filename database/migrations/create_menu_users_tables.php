@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menu_user', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name', 15);
-            $table->string('url', 100);
-            $table->string('route', 100)->nullable();
-            $table->string('ico', 250)->nullable();
-            $table->integer('order');
-            $table->string('role', 50);
+            $table->foreignId('team_id')->constrained('teams');
+            $table->foreignId('menu_id')->constrained('menus');
+            $table->foreignId('user_id')->constrained('users');
 
             $table->timestamps();
         });
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu_users');
     }
 };
