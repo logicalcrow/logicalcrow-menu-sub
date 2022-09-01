@@ -4,9 +4,9 @@
     "keywords": [
         "logicalcrow",
         "laravel",
-        "menu"
+        "menu",
+        "Sub menu"
     ],
-    "type": "package",
     "homepage": "https://github.com/logicalcrow/logicalcrow-menu-sub.git",
     "license": "MIT",
     "authors": [
