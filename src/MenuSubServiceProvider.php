@@ -25,10 +25,10 @@ class MenuSubServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->offerPublishing();
+        $this->migrationPublishing();
     }
 
-    protected function offerPublishing()
+    protected function migrationPublishing()
     {
         $this->publishes([
             __DIR__ . '/../database/migrations/create_menus_tables.php.stub' => $this->getMigrationFileName('create_menus_tables.php'),
