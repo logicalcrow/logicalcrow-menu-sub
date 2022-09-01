@@ -1,0 +1,36 @@
+{
+    "name": "logicalcrow/menu-sub",
+    "description": "dynamic menu library",
+    "keywords": [
+        "logicalcrow",
+        "laravel",
+        "menu"
+    ],
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giovanni Cespedes",
+            "email": "soporte@logicalcrow.com",
+            "homepage": "https://www.logicalcrow.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "illuminate/database": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Logicalcrow\\Menu\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Logicalcrow\\Menu\\MenuServiceProvider"
+            ]
+        }
+    }
+}
