@@ -14,19 +14,19 @@ class CreatePermissionTables extends Migration
     public function up()
     {
         Schema::create('menus', function (Blueprint $table) {
-                    $table->id();
+            $table->id();
 
-                    $table->string('name', 15);
-                    $table->string('url', 50);
-                    $table->string('ico', 50)->nullable();
-                    $table->string('namespace', 100);
-                    $table->string('prefix', 100);
-                    $table->string('base_path', 100);
-                    $table->integer('order');
-                    $table->string('role');
+            $table->string('name', 15);
+            $table->string('url', 50);
+            $table->string('ico', 50)->nullable();
+            $table->string('namespace', 100);
+            $table->string('prefix', 100);
+            $table->string('base_path', 100);
+            $table->integer('order');
+            $table->string('role');
 
-                    $table->timestamps();
-                });
+            $table->timestamps();
+        });
 
         Schema::create('menu_subs', function (Blueprint $table) {
             $table->id();
