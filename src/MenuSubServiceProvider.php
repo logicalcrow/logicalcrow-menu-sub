@@ -25,7 +25,7 @@ class MenuSubServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->offerPublishing();
+        //$this->offerPublishing();
     }
 
     protected function offerPublishing()
