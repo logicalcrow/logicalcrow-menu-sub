@@ -2,22 +2,11 @@
 
 namespace Logicalcrow\Menu;
 
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
+
 
 class MenuSubServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
     /**
      * Bootstrap any application services.
      *
@@ -25,32 +14,22 @@ class MenuSubServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->migrationPublishing();
+        $this->configurePublishing();
     }
 
-    protected function migrationPublishing()
+    protected function configurePublishing()
     {
         $this->publishes([
-            __DIR__ . '/../database/migrations/create_menus_tables.php.stub' => $this->getMigrationFileName('create_menus_tables.php'),
+            __DIR__.'/../database/migrations/create_menus_tables.php' => $this->app->databasePath('migrations/2022_09_01_000000_create_menus_tables.php')
         ], 'migrations');
-    }
 
-    /**
-     * Returns existing migration file if found, else uses the current timestamp.
-     *
-     * @return string
-     */
-    protected function getMigrationFileName($migrationFileName): string
-    {
-        $timestamp = date('Y_m_d_His');
+        $this->publishes([
+            __DIR__.'/Models/Menu.php' => app_path('Models/Menu.php'),
+            __DIR__.'/Models/MenuSub.php' => app_path('Models/MenuSub.php')
+        ], 'models');
 
-        $filesystem = $this->app->make(Filesystem::class);
-
-        return Collection::make($this->app->databasePath().DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR)
-            ->flatMap(function ($path) use ($filesystem, $migrationFileName) {
-                return $filesystem->glob($path.'*_'.$migrationFileName);
-            })
-            ->push($this->app->databasePath()."/migrations/{$timestamp}_{$migrationFileName}")
-            ->first();
+        $this->publishes([
+            __DIR__.'/Providers/MenuServiceProvider.php' => app_path('Providers/MenuServiceProvider.php')
+        ], 'providers');
     }
 }
