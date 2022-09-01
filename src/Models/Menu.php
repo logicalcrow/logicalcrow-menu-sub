@@ -3,7 +3,6 @@
 namespace Logicalcrow\Menu\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Team;
 
 class Menu extends Model
 {
