@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('route', 100)->nullable();
             $table->string('ico', 250)->nullable();
             $table->integer('order');
-            $table->string('role', 50);
+            $table->string('role', 50)->nullable();
 
             $table->timestamps();
         });
